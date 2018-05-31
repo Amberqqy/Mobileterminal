@@ -31,6 +31,7 @@ var blogDetail = new Vue({
        isClick: true,
        isBg: false,
        islala:false,
+       Pcont: "",
 	},
 	mounted:function(){
         this.getData();
@@ -123,6 +124,7 @@ var blogDetail = new Vue({
                     that.blog = name;
                     that.list = res.data.blog_info;
                     that.related = res.data.related_blog;
+                    that.Pcont = res.data.blog_info.content;
                     if(that.list.author_name == name){
                         that.islala = true;
                     }

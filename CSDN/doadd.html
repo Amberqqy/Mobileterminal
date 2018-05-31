@@ -24,12 +24,13 @@
           <script id="container" name="content" type="text/plain" class="wid-tainer"></script>
           <p>
             博客分类：
-            <select v-model="classid" class="class-input" @click="classadd()" >
+            <select v-model="classid" class="class-input"  >
               <option :value="itema.classify_id" selected="selected" v-for="itema in lists.classify_lists">{{ itema.classify_name }}</option>
               <!-- <option value="4">it</option> -->
             </select>
           </p>
-          <button @click="ispush">发布博客</button> 
+          <button @click="ispush":class="isYes ? 'show' : 'hide'">发布博客</button> 
+          <button @click="ispu":class="isYes ? 'hide' : 'show'">保存博客</button>
       </div> 
       <div :class="isShow ? 'hide' : 'show'">
         <div class="cont-info">
@@ -55,11 +56,17 @@
           lists: [],
           list:[],
     			title: "",
-    			classid: "",
+    			classid: "1",
           isShow: true,
+          isYes: true,
     		},
     		mounted: function(){
     			var ue = UE.getEditor('container');
+          if(window.location.search.length >0){
+            this.isYes = false;
+            this.getData();
+          }
+          this.classadd();
     		},
     		methods: {
           classadd:function(){
@@ -79,7 +86,7 @@
               })
           },
           clickDel:function(item){
-             var that = this;
+              var that = this;
               var userId = window.localStorage.getItem("user_id");
               $.ajax({
                 url: 'http://blog.com/api/blog/del',
@@ -119,7 +126,7 @@
                 success:function(res){
                   var bb =item.id;
                   console.log(item.id)
-                  window.location.href="./donew.html?id="+item.id ;
+                  window.location.href="./doadd.html?id="+item.id ;
                   if(res.error_code == 0){
                     // window.localStorage.getItem("blog_id",res.data.my_blog_info.id);
                     // that.list = res.data;
@@ -159,21 +166,73 @@
     					"type": "post",
     					"dataType": "json",
     					"data": {
-    						"user_id": userId,
-    						"title": that.title,
-    						"content": that.getUeditorContent(),
-    						"classify_id": that.classid,
+      						"user_id": userId,
+      						"title": that.title,
+      						"content": that.getUeditorContent(),
+      						"classify_id": that.classid,
     					},
     					success: function(res){
     						if(res.error_code == 0){
     							alert("发布成功即将跳转。。。。。。");
-    							// window.location.href="./myblog.html"
+    							window.location.href="./myblog.html"
     						}else {
     							alert(res.message);
     						}
     					}
     				})
-    			}
+    			},
+          ispu:function(){
+                var that = this;
+                var userId = window.localStorage.getItem("user_id");
+                var blogId = window.location.search.split("=")[1];
+                $.ajax({
+                  "url": "http://blog.com/api/blog/doEdit",
+                  "type": "post",
+                  "dataType": "json",
+                  "data": {
+                    "user_id": userId,
+                    "blog_id": blogId,
+                    "title": that.title,
+                    "content": that.getUeditorContent(),
+                    "classify_id": that.classid,
+                  },
+                  success: function(res){
+                    if(res.error_code == 0){
+                      alert("发布成功即将跳转。。。。。。");
+                      window.location.href="./doadd.html"
+                    }else {
+                      alert(res.message);
+                    }
+                  }
+                })
+          },
+          getData:function(){
+                var that = this;
+                var userId = window.localStorage.getItem("user_id");
+                var blogId = window.location.search.split("=")[1];
+                $.ajax({
+                  url: 'http://blog.com/api/blog/add',
+                  type: 'get',
+                  dataType:'json',
+                  data: {
+                    user_id:userId,
+                    blog_id:blogId,
+                  },
+                  success:function(res){
+                    that.title = res.data.my_blog_info.title;
+                    that.classid = res.data.my_blog_info.classify_id;
+                    that.content = res.data.my_blog_info.content;
+                    $(document).ready(function(){  
+                      var ue = UE.getEditor('container');  
+                      var proinfo =that.content;    
+                      ue.ready(function() {//编辑器初始化完成再赋值  
+                          ue.setContent(proinfo);  //赋值给UEditor  
+                      });  
+                    });
+                    that.list = res.data;
+                  }
+                })
+          }
     		}
     	})
 	</script>

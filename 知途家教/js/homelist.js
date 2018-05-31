@@ -121,16 +121,16 @@ var homeList = new Vue({
 		           		res.data.condition.type.forEach(function(itemp){
 	                        itemp.isSelected = false;
 		           		})
-	                    that.condition = res.data.condition;
-                        that.condition.subject.forEach(function(k){
-                            if(that.searchSub == k.id){
-                            	console.log(that.sub)
-                            	that.sub = k.label;
-                                that.isShowSub = true;
-                                k.isSelected = true;
-                                // that.isShowAllSelect = true;
-                            }
-                        })
+	                that.condition = res.data.condition;
+                    that.condition.subject.forEach(function(k){
+                        if(that.searchSub == k.id){
+                        	console.log(that.sub)
+                        	that.sub = k.label;
+                            that.isShowSub = true;
+                            k.isSelected = true;
+                            // that.isShowAllSelect = true;
+                        }
+                    })
 	           		}
 	           	}
            })

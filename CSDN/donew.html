@@ -39,6 +39,7 @@
           list:[],
     			title: "",
     			classid: "",
+          content: "",
           isShow: true,
     		},
     		mounted: function(){
@@ -93,7 +94,7 @@
         				})
     			},
     			getData:function(){
-    			  var that = this;
+    			      var that = this;
 	              var userId = window.localStorage.getItem("user_id");
                 var blogId = window.location.search.split("=")[1];
 	              $.ajax({
@@ -105,12 +106,17 @@
 	                  blog_id:blogId,
 	                },
 	                success:function(res){
-                        that.title = res.data.my_blog_info.title;
-                        that.classid = res.data.my_blog_info.classify_id;
-                        that.getUeditorContent() = res.data.my_blog_info.content;
-                        // console.log(that.classid)
-	                      that.list = res.data;
-
+                    that.title = res.data.my_blog_info.title;
+                    that.classid = res.data.my_blog_info.classify_id;
+                    that.content = res.data.my_blog_info.content;
+                    $(document).ready(function(){  
+                      var ue = UE.getEditor('container');  
+                      var proinfo =that.content;    
+                      ue.ready(function() {//编辑器初始化完成再赋值  
+                          ue.setContent(proinfo);  //赋值给UEditor  
+                      });  
+                    });
+                    that.list = res.data;
 	                }
 	              })
     			}
