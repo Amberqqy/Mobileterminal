@@ -1,0 +1,162 @@
+body,html,div,p,span,a,li,ul,i,h3,input,h1 {
+	padding: 0;
+	margin: 0;
+}
+html {
+	font-size: 62.5%;
+}
+#box-login>div {
+}
+.login-header {
+	padding: 1rem 1.5rem;
+	/*text-align: center;*/
+	position: relative;
+}
+.clearfix::after {
+	display: block;
+	content: "";
+	clear: both;
+	height: 0;
+}
+.login-header .head-go, .login-header>a {
+	display: inline-block;
+	vertical-align: bottom;
+}
+.login-header>a {
+	float: right;
+    font-size: 1.8rem;;
+    font-weight: 540;
+    color: #6b7072
+}
+.login-header .head-go {
+	position: absolute;
+	left: 1.5rem;
+	width: 2rem;
+	height: 2rem;
+	/*border: solid #6b7072;
+	border-width: 0 0 4px 4px;
+	transform:rotate(45deg);*/
+}
+.login-desc {
+	padding: 1rem 1.5rem;
+}
+.login-desc>h1 {
+	color: #394043;
+	font-size: 2.5rem;
+	font-weight: 530;
+	margin-bottom: 1rem;
+}
+.login-desc>h3 {
+	color: #9c9fa1;
+	font-size: 1.6rem;
+	font-weight: 530;
+}
+.login-header .head-go::before {
+	display: block;
+	width: 0.2rem;
+	height: 100%;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	content: "";
+	background: #6b7072;
+    -webkit-transform: translate(-50%,-50%) rotate(45deg);
+}
+.login-header .head-go::after {
+	display: block;
+	width: 0.2rem;
+	height: 100%;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	content: "";
+	background: #6b7072;
+	-webkit-transform: translate(-50%,-50%) rotate(-45deg);
+}
+.login-list{
+    padding: 0 1.5rem;
+}
+.login-list>p {
+	/*margin-bottom: 1rem;*/
+	padding: 1rem 0;
+	border-bottom: 1px solid #e5e5e5;
+}
+.login-list>p:last-child {
+	border-bottom: none;
+}
+.login-list>p>input {
+	width: 100%;
+	border:none;
+	font-size: 1.4rem;
+	color: #999;
+	padding: 0.6rem 0;
+}
+.login-list .login-phone, .login-list .login-submit {
+	display: inline-block;
+	float: left;
+}
+.login-list .login-phone {
+	width: 75%
+}
+.login-list .login-submit {
+	width: 25%;
+	background: none;
+	border: none;
+	font-size: 1.4rem;
+}
+.login-list>p>input:focus {
+   outline: none;
+}
+a {
+	text-decoration: none;
+}
+.login-list>p>a {
+	display: block;
+	padding: 1rem 0;
+	color: #fff;
+	font-weight: 560;
+	text-align: center;
+	background:#66cea3;
+	font-size: 1.6rem;
+}
+.login-agree {
+	padding: 2rem 0;
+	text-align: center;
+	font-size: 1rem;
+	color: #cdcfd0;;
+}
+.login-agree>a {
+    text-decoration: underline;
+    color: #cdcfd0;;
+}
+.tab-text>div {
+	text-align: center;
+}
+.tab-text>div>a {
+	display: inline-block;
+	font-size: 1.2rem;
+	color: #333;
+	margin-right: 0.3rem;
+}
+.hide {
+	display: none;
+}
+.show {
+	/*display: */
+}
+.click-show {
+	position: fixed;
+	bottom: 10em;
+	z-index: 999;
+}
+.click-show {
+	width: 100%;
+	text-align: center;
+}
+.click-show>span {
+	color: #fff;
+	border-radius: 5px;
+	padding:1.5rem;
+	background: rgba(0,0,0,0.65);
+	font-size: 1.4rem;
+}

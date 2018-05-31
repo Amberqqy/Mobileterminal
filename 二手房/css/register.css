@@ -1,0 +1,117 @@
+body,html,div,p,span,a,li,ul,i,h3,input {
+	padding: 0;
+	margin: 0;
+}
+html {
+	font-size: 62.5%;
+}
+#box-register>div {
+}
+.register-header {
+	padding: 1rem 1.5rem;
+	text-align: center;
+	position: relative;
+}
+.clearfix::after {
+	display: block;
+	content: "";
+	clear: both;
+	height: 0;
+}
+.register-header .head-go, .register-header>h3 {
+	display: inline-block;
+	vertical-align: bottom;
+}
+.register-header>h3 {
+    font-size: 1.8rem;;
+    font-weight: 540;
+    color: #6b7072
+}
+.register-header .head-go {
+	position: absolute;
+	left: 1.5rem;
+	top: 1.5rem;
+	width: .8rem;
+	height: .8rem;
+	border: solid #6b7072;
+	border-width: 0 0 4px 4px;
+	transform:rotate(45deg);
+}
+.register-list{
+    padding: 0 1.5rem;
+}
+.register-list>p {
+	/*margin-bottom: 1rem;*/
+	padding: 1rem 0;
+	border-bottom: 1px solid #e5e5e5;
+}
+.register-list>p:last-child {
+	border-bottom: none;
+}
+.register-list>p>input {
+	width: 100%;
+	border:none;
+	font-size: 1.4rem;
+	color: #999;
+	padding: 0.6rem 0;
+}
+.register-list .register-phone, .register-list .register-submit {
+	display: inline-block;
+	float: left;
+}
+.register-list .register-phone {
+	width: 75%
+}
+.register-list .register-submit {
+	width: 25%;
+	background: none;
+	border: none;
+	font-size: 1.4rem;
+}
+.register-list>p>input:focus {
+   outline: none;
+}
+a {
+	text-decoration: none;
+}
+.register-list>p>a {
+	display: block;
+	padding: 1rem 0;
+	color: #fff;
+	font-weight: 560;
+	text-align: center;
+	background:#66cea3;
+	font-size: 1.6rem;
+}
+.register-agree {
+	padding: 2rem 0;
+	text-align: center;
+	font-size: 1rem;
+	color: #cdcfd0;;
+}
+.register-agree>a {
+    text-decoration: underline;
+    color: #cdcfd0;;
+}
+.show {
+
+}
+.hide {
+	display: none;
+}
+.click-show {
+	position: fixed;
+	bottom: 10em;
+	z-index: 999;
+}
+.click-show {
+	width: 100%;
+	text-align: center;
+}
+.click-show>span {
+	color: #fff;
+	border-radius: 5px;
+	padding:1.5rem;
+	background: rgba(0,0,0,0.65);
+	font-size: 1.4rem;
+}

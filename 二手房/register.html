@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="./css/register.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.14/dist/vue.js"></script>
+	<title>注册</title>
+</head>
+<body>
+<div id="box-register">
+    <div class="register-header clearfix">
+    	<a href="javascript:history.go(-1)" class="head-go"></a>
+    	<h3>注册账号</h3>
+    </div>
+    <div class="register-list">
+    	<p class="clearfix">
+    		<input type="text" class="register-phone" placeholder="请输入手机号" v-model="phone">
+    		<!-- <input type="submit" class="register-submit" value="发送验证码" > -->
+    	</p>
+    	<!-- <p>
+    		<input type="text" class="register-password" placeholder="请输入验证码">
+    	</p> -->
+    	<p>
+    		<input type="password" class="register-password" placeholder="请输入新密码" v-model="password">
+    	</p>
+    	<p>
+    		<a href="javascript:void(0)" @click="clickRegister">注册</a>
+    	</p>
+    </div>
+    <div class="register-agree">
+    	登录/注册即代表同意<a href="javascript:void(0)">《链家用户协议》</a>
+    </div>
+    <div class="click-show":class="isClickShow ? 'hide' : 'show'">
+         <span v-html="showtext">
+         </span>	
+    </div>
+</div>	
+<script src="./js/register.js"></script>
+</body>
+</html>

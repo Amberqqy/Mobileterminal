@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="./css/userhome.css">
+	<script type="text/javascript" src="./js/jQuery-3.2.0.min.js"></script>
+    <script src="./js/swiper.min.js"></script>
+    <link rel="stylesheet" href="./css/swiper.min.css">
+	<script type="text/javascript" src="./js/vue.js"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/css/swiper.min.css">
+	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/js/swiper.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.14/dist/vue.js"></script>
+	<title>二手房</title>
+</head>
+<body>
+<div id="user-header":class="isa ? 'add-bg' : ''">
+	<div class="user-header" >
+	    <div class="header-a">
+	    	<a href="javascript:void(0)"><i></i></a>
+	        <span class="user-city">北京<i></i></span>
+	    </div>
+	    <div class="header-b">
+	    	<i></i>
+	    </div>
+	    <div class="header-a">
+	    	<a href="./people.html" class="user-people"></a>
+	    </div>
+	</div>
+	<div class="nav-swiper">
+		<div class="swiper-container ">
+		    <div class="swiper-wrapper ">
+			    <a href="javascript:void(0)" class="swiper-slide" v-for="item in listban">
+			        <img :src="item.image">
+			    </a>
+			    <!--  <a href="javascript:void(0)" class="swiper-slide ">
+			        <img src="./image/head_bg.jpg" alt="">
+			    </a>
+			     <a href="javascript:void(0)" class="swiper-slide ">
+			        <img src="./image/head_bg.jpg" alt="">
+			    </a> -->
+		    </div>
+		    <div class="swiper-pagination"></div> 
+		</div>
+		<div class="div-input"> 
+			<input type="text" placeholder="请输入小区或者商圈名">
+		</div>
+	</div>
+	<div class="total-search">
+		<a href="javascript:void(0)" >
+			<img src="./image/phphOykoz.png.144x144.png" alt="">
+			<span>智能找房</span>
+		</a>
+		<a href="javascript:void(0)">
+			<img src="./image/phpKy8gb4.png.144x144.png" alt="">
+			<span>智能找房</span>
+		</a>
+		<a href="javascript:void(0)">
+			<img src="./image/phpQHFL7t.png.144x144.png" alt="">
+			<span>智能找房</span>
+		</a>
+	</div>
+	<div class="hotput">
+	    <p>为您推荐</p>
+		<div class="clearfix">
+			<a href="javascript:void(0)" v-for="itema in list.hotpush">
+				<img :src="itema.img" alt="">
+				<h3>适合两颗自的生活</h3>
+				<p>哈哈哈哈</p>
+			</a>
+			<a href="javascript:void(0)" >
+				<img src="./image/head_bg.jpg" alt="">
+				<h3>适合两颗自的生活hahahahahh</h3>
+				<p>哈哈哈哈</p>
+			</a>
+			<a href="javascript:void(0)">
+				<img src="./image/head_bg.jpg" alt="">
+			</a>
+			<a href="javascript:void(0)">
+				<img src="./image/head_bg.jpg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="house-list">
+		<div class="list-about clearfix":class="isPosition ? 'abso' : ''" @click="bgcolor">
+			<a href="javascript:void(0)" @click="clickCity":class="isCity ? 'talbg' : '' ">{{ textname }}<i></i></a>
+			<a href="javascript:void(0)" @click="clickPrice":class="isPrice ? 'talbg' : '' ">{{ housepeice }}<i></i></a>
+			<a href="javascript:void(0)" @click="clickHouse":class="isHouse ? 'talbg' : '' ">{{ housename }}<i></i></a>
+			<a href="javascript:void(0)" @click="clickMore":class="isMore ? 'talbg' : '' ">{{ morename }}<i></i></a>
+		</div>
+		<div class="new-city new-but tal-list":class="isShowCity ? 'cityshow' : 'hide'" v-if="condition">
+		   <div class="city-tal new-but tal-list">
+		   	    <p :class="isTalcity ? 'bg' : ''"><a href="javascript:void(0)" @click="clickNewcity" > 区域</a></p>
+		   	    <p :class="isTalsub ? 'bg' : ''"><a href="javascript:void(0)" @click="clickNewsub">地铁</a></p>
+		   </div>
+		   <div class="new-but tal-list p-margin" :class="clickTa ? '' : 'hide'">
+		   	    <p v-for="(taba, index) in listTab.region" v-on:click="clickTaba(taba, index)":class="ist == index ? 'isbg' : ''"><a href="javascript:void(0)" > {{ taba.name }}</a></p>
+		   </div>
+			<!-- <div class="tal-list new-but":class="isTalsub ? 'lalashow' : 'hide'">
+			   	<p><a href="javascript:void(0)">二号线</a></p>
+			</div> -->
+		   <div class="ag-list new-but p-margin":class="isRegion ? 'lalashow' : 'hide'">
+		   	   <p v-for="(tabtwo, index) in listTwo" v-on:click="clickthree(tabtwo, index)":class="istest == index ? 'isbg' : ''"><a href="javascript:void(0)" >{{ tabtwo.name }}</a></p>
+		   </div>
+		</div>
+		<div class="new-price new-but":class="isShowPrice ? 'show' : 'hide'">
+			<p v-for="(tabb ,index) in listTab.price_section">
+		    	<a href="javascript:void(0)" v-on:click="clickPri(tabb ,index)":class="iscolor == index ? 'isbg' : ''">{{ tabb.name }}</a>
+		    </p>
+		    <p>
+		    	自定义价格：<input type="text" placeholder="最小"> -<input type="text" placeholder="最大">
+		    	<button >确定</button>
+		    </p>
+		</div>
+		<div class="new-house new-but":class="isShowHouse ? 'show' : 'hide'" >
+			<p  v-on:click="clickBg(tabc, index)" v-for="(tabc, index) in listTab.house_type">
+		    	<a href="javascript:void(0)">{{ tabc.name }}<i :class="tabc.isSelected ? 'box-bg' : ''"></i></a>
+		    </p>
+		    <button @click="talnum">确定</button>
+		</div>
+		<div class="new-more new-but":class="isShowMore ? 'show' : 'hide'" v-if="condi">
+			<p class="clearfix">
+				<b>朝向</b>
+				<a href="javascript:void(0)" v-for="tabd in listTab.orientation":class="tabd.bor ? 'isborder' : ''" v-on:click="clicklala(tabd)"> {{ tabd.name }}</a>
+			</p>
+			<p class="clearfix">
+				<b>朝向</b>
+				<a href="javascript:void(0)" v-for="tabe in listTab.tab":class="tabe.bor ? 'isborder' : ''" v-on:click="clickbebe(tabe)"> {{ tabe.name }}</a>
+			</p>
+			<button @click="talno">清空条件</button>
+			<button @click="talsure">确定</button>
+		</div>
+	</div>
+	<div class="list-content":class="isPosition ? 'abtop' : ''">
+		<a :href="'./houseinfo.html?id='+itemb.id+''" v-for="itemb in list.house_lists">
+			<img :src="itemb.image" alt="">
+			<div class="list-info">
+				<p class="info-title">{{ itemb.title }}</p>
+				<p class="info-big">{{ itemb.type }}/{{ itemb.area }}/{{ itemb.orientation }}/ {{ itemb.xiaoqu }}</p>
+				<p class="info-howmuch"><b>{{ itemb.price }}</b> {{ itemb.unit_price }}元/平</p>
+				<p class="info-howgood" >
+					<span v-for="itemc in itemb.tab">{{ itemc }}</span>
+				</p>
+			</div>
+		</a>
+		<a href="./houseinfo.html">
+			<img src="./image/rsp_pic_upload.jpg" alt="">
+			<div class="list-info">
+				<p class="info-title">这房子好啊 依山傍水  风景好</p>
+				<p class="info-big">这房子好啊 依山傍水  风景好</p>
+				<p class="info-howmuch"><b>675万</b> 依山傍水  风景好</p>
+				<p class="info-howgood">
+					<span>地铁</span>
+					<span>满五年</span>
+					<span>随时看房</span>
+					<span>新上</span>
+				</p>
+			</div>
+		</a>
+	</div>
+</div>	
+<script src="./js/userhome.js"></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+.box-img {
+	width: 100%;
+	background:url("../image/mine_head_bg_new.png") no-repeat;
+	height: auto;
+	text-align: center;
+	padding: 1.5rem 0;
+}
+body {
+	background: #e5e5e5;
+}
+.box-img>img {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 100%;
+    margin: 0.7rem 0;
+}
+.box-img>p {
+    text-align: center;
+}
+.box-img>p>a {
+	display: inline-block;
+	padding: 0.5rem 1.5rem;
+	color: #fff;
+	font-size: 1.2rem;
+	border-radius: 4px;
+	margin: 0.5rem 0.4rem;
+	border:1px solid #fff;
+}
+.new-list {
+	min-height: 32rem;
+}
+.new-list>div:first-child {
+	margin-top: 1rem;
+}
+.people-list {
+	position: relative;
+	padding: 1.5rem 1.5rem 1.5rem 4.5rem;
+	background: #fff;
+	border-bottom: 1px solid #e5e5e5;
+}
+.people-list>span, .people-list>a {
+	display: inline-block;
+	vertical-align: top;
+}
+.people-list>span {
+	position: absolute;
+	top: 1.5rem;
+	left: 1.5rem;
+	width: 1.5rem;
+	height: 1.5rem;
+	background: url("../image/list-icon.png") no-repeat;
+	background-size: cover;
+}
+.people-list .list-love {
+	background-position: 0 0;
+}
+.people-list .list-tree {
+	background-position: 0 -1.5rem;
+}
+.people-list .list-zero {
+	background-position: 0 -3.12rem;
+}
+.people-list .list-phone {
+	background-position: 0 -4.69rem;
+}
+.people-list>a {
+	color: #333;
+	width: 100%;
+	font-size: 1.0rem;
+	vertical-align: top;
+}
+.people-list>a>i {
+	position: relative;
+	float: right;
+	display: inline-block;
+	width: 1.2rem;
+	height: 1.2rem;
+	vertical-align: middle;
+	background: url("../image/bb.svg") no-repeat;
+	background-size: cover;
+}
