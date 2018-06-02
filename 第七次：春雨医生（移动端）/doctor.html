@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>医疗搜索：春雨先生</title>
+	<script type="text/javascript" src="./js/jquery-3.2.0.min.js"></script>
+</head>
+<style>
+	html,body {
+		font-size: 62.5%;
+	}
+	html,body,div,a,span,p,img {
+		padding: 0;
+		margin: 0;
+	}
+	a {
+		text-decoration: none;
+		color: #585858;
+		line-height: 1.2rem;
+		font-size: 1.4rem;
+		letter-spacing: 0.05rem;
+	}
+	span {
+		font-size: 1.4rem;
+	}
+	.illness {
+		width: 100%;
+	}
+	.illness a {
+		display: block;
+		width: 100%;
+	}
+	.illness a>span {
+		display: block;
+		padding: 0.7rem 1.5rem;
+	}
+	 .illness .illness-top {
+		font-size: 1.6rem;
+		color: #666;
+		font-weight: bold;
+		padding-top: 1.8rem ;
+	}
+	.illness-content {
+		word-break: break-all;
+		text-overflow:ellipsis;
+		color: #4f4e4e;
+		font-size: 1.5rem;
+		line-height: 1.8rem;
+	}
+	.clearfix::after {
+		display: block;
+		content:"";
+		height: 0;
+		clear: both;
+	}
+	.illness-fina {	
+	    padding: 0.7rem 1.5rem;	
+	}
+	.illness-fina>span{
+        display: inline-block;
+        float: left;
+        width:32%;
+        text-align: center;
+        line-height: 2.4rem;
+        border-left: 1px solid rgba(224,224,224,0.24);
+	}
+	.border {
+		border-right: 1px solid rgba(224,224,224,0.24);
+	}
+	.consult {
+		background-color: #F1F1F1;
+		width: 100%;
+		padding-top: 0.8rem;
+	}
+	.else-consult {
+		background-color: #F1F1F1;
+		width: 100%;
+		height: 3rem;
+	}
+	.about {
+        width: 100%;
+		padding-bottom: 1.7rem;
+        background-color: #fff;
+	}
+	.title {
+		line-height: 2rem;
+		padding: 1rem 1.5rem 0 1.5rem;
+	}
+	.left-title {
+		font-weight: bold;
+		font-size: 1.6rem;
+		color: #666;
+	}
+	.right-title {
+		float: right;
+	}
+	.right-title a {
+		font-size: 1.3rem;
+		color: #999;
+	}
+	.right-title a img {
+		width: 0.7rem;
+		height: 1.2rem;
+	}
+	.infor {
+		position: relative;
+		padding: 1.5rem 1.5rem 1.5rem 2.6rem;
+		border-bottom: 1px solid rgba(2,2,2,0.05);
+	}
+	.infor img {
+        position: absolute;
+        width: 1.5rem;
+        height: 1.5rem;
+        left: 0;
+        top: 1.7rem;
+	}
+	.img-infor {
+		position: relative;
+		padding: 1.5rem 0 0 8.5rem;
+		border-bottom: 1px solid rgba(2,2,2,0.05);
+
+	}
+	.img-infor>div>img {
+		position: absolute;
+		width: 7rem;
+		height: 7rem;
+		border-radius: 100%;
+		left: 0;
+	}
+	.img-infor>div {
+		border-bottom: 1px solid rgba(2,2,2,0.05);
+        padding-bottom: 0.5rem;
+	}
+	.img-infor p {
+		color: #999;
+		font-size: 1.4rem;
+		letter-spacing: -0.04rem;
+	}
+	.img-infor p span {
+		padding-right: 0.4rem;
+	}
+	.img-infor p span ,.img-infor .some{
+        color: #666;
+	}
+	.img-infor img {
+		display: block;
+		float: left;
+	}
+	.write {
+		font-weight: bold;
+		font-size: 1.6rem;
+		color: #323232;
+	}
+	.buy {
+		padding: 1.2rem 0;
+	}
+	.title .bignell {
+		display: block;
+		width: 100%;
+		padding: 1rem 0;
+		color: #000;
+		font-size: 1.5rem;
+		line-height: 1.6rem;
+		border-bottom: 1px solid rgba(2,2,2,0.05);
+	}
+	.title .bignell img {
+		float: right;
+		width: 0.7rem;
+		height: 1.2rem;
+	}
+	.big-infor {
+		position: relative;
+		padding: 1.5rem 0 1.5rem 8.5rem;
+		border-bottom: 1px solid rgba(2,2,2,0.05);
+
+	}
+	.big-infor img {
+		position: absolute;
+		left: 0;
+		width: 7rem;
+		height: 7rem;
+		margin-bottom: 10px;
+	}
+	.botton {
+		position: relative;
+		padding-top: 3.5rem;
+	}
+	/*.revise {
+		width: 100%;
+		height: 40px;
+		border-color:rgba(0,0,0,0.07);
+	}*/
+	.new-search>a>img {
+		width: 1.5rem;
+		height: 1.5rem;
+	}
+	.new-search input:focus {
+		outline: 0;
+	}
+	.new-search>a {
+	position: absolute;
+	display: block;
+	right: 1.8rem;
+	top: 1.5rem;
+	width: 1.5rem;
+	height: 1.5rem;
+    }
+    .new-search {
+	position: relative;
+	padding: 0.8rem 1.2rem;
+	}
+	.new-search input {
+	    width: 96%;
+		padding: 0.7rem 2%;
+		background-color: #F4F4F4;
+		color: #666;
+		border: 0;
+		border-radius: 0.5rem;
+	}
+</style>
+<body>
+    <div class="header-search">
+		<div class="new-search">
+			<input type="text" placeholder="搜症状、疾病、医生、咨询" class="revise">
+			<a href="javascript:void(0)" >
+				<img src="./image/search.png" alt="" class="fine_query">
+			</a>
+		</div>
+	</div>
+	<div class="illness">
+		<!-- <a href="javascript:void(0)">
+			<span class="illness-top">发烧</span>
+			<span class="illness-content">发烧既体温高于正常值。正常人体温在一个狭小范围内有所波动，如口温波动在36.0～37℃之间，以凌晨0～4时最低，下午5～7时最高，差异在正负1℃左右。口腔温度在37.3℃以上，直肠内温度在37.6℃以上，腋窝温度在37.2以上即称为发热。</span>
+			<div class="illness-fina clearfix">
+				<span>就诊科室</span>
+				<span>术前注意事项</span>
+				<span class="border">术后护理</span>
+			</div>
+		</a> -->
+	</div>
+	<div class="consult">
+		<div class="about make">
+			<div class="title">
+				<span class="left-title">相关咨询记录</span>
+				<span class="right-title">
+					<a href="#">更多 <img src="./image/Group 5 Copy@2x.png" alt=""></a>
+				</span>
+				<div class="new-infor">
+					<!-- <div class="infor">
+						<img src="./image/Group 22x.png" alt="">
+						<span>孕19周，现在正在发烧，怎样退烧？（女，27岁）</span>
+					</div> -->
+				</div>				
+			</div>
+		</div>
+	</div>
+	<div class="consult">
+		<div class="about hhhh">
+			<div class="title llke">
+				<span class="left-title">医生推荐</span>
+				<span class="right-title">
+					<a href="#">更多 <img src="./image/Group 5 Copy@2x.png" alt=""></a>
+				</span>
+				<div class="img-infor">
+					<!-- <div>
+						<img src="./image/ab.jpg" alt="">
+						<p>
+							<span class="write">微微</span>
+							<span>内科</span>
+							<span>主治医师</span>
+						</p>
+						<p class="some">北京军区总医院分区</p>
+						<p>擅长：负责门诊诊断，参加急诊抢救工作；利用医疗设备、器械、药物、化学疗法、输氧、补充营养物质、输血、止血、替代治疗等手段治疗内科疾病；分析化验和检查报告，做出病情诊断；开具处方，做出饮食、锻炼建议
+						；</p>
+					</div>
+					<p class="buy"><a href="#">￥5起</a><span>8792人购买</span></p> -->
+				</div>
+			</div>
+			<!-- <div class="title llkp"> -->
+				<!-- <span class="left-title">医生推荐</span>
+				<span class="right-title">
+					<a href="#">更多 <img src="./image/Group 5 Copy@2x.png" alt=""></a>
+				</span>
+				<div class="img-infor">
+				<div>
+					<img src="./image/ab.jpg" alt="">
+					<p>
+						<span class="write">微微</span>
+						<span>内科</span>
+						<span>主治医师</span>
+					</p>
+					<p class="some">北京军区总医院分区</p>
+					<p>擅长：负责门诊诊断，参加急诊抢救工作；利用医疗设备、器械、药物、化学疗法、输氧、补充营养物质、输血、止血、替代治疗等手段治疗内科疾病；分析化验和检查报告，做出病情诊断；开具处方，做出饮食、锻炼建议
+					；</p>
+				</div>
+					<p class="buy"><a href="#">￥5起</a><span>8792人购买</span></p>
+				</div> -->
+			<!-- </div> -->
+		</div>
+	</div>
+	<div class="consult">
+		<div class="about kkk">
+			<div class="title">
+				<span class="left-title">健康百科</span>
+				<div class="k-wc">
+					<!-- <a href="javascript:void(0)" class="bignell">痔疮如何治疗？  
+				    <img src="./image/Group 5 Copy@2x.png" alt="">
+					</a> -->
+					<!-- <a href="javascript:void(0)" class="bignell">         痔疮如何治疗？  
+					    <img src="./image/Group 5 Copy@2x.png" alt="">
+					</a>
+					<a href="javascript:void(0)" class="bignell">怎么给痔疮分类 
+					<img src="./image/Group 5 Copy@2x.png" alt="">
+					</a>
+					<a href="javascript:void(0)" class="bignell">怎么给痔疮分类 
+					<img src="./image/Group 5 Copy@2x.png" alt="">
+					</a> -->
+				</div>
+			</div>			
+		</div>
+	</div>
+	<div class="consult">
+		<div class="about">
+			<div class="title">
+			    <span class="left-title">相关科普咨询</span>
+				<span class="right-title">
+					<a href="#">更多 <img src="./image/Group 5 Copy@2x.png" alt=""></a>
+				</span>
+				<div class="big-infor">
+					<!-- <img src="./image/app6.jpg" alt="">
+					 <p><a href="javascript:void(0)">把脸洗干净就不会长痘痘吗？</a></p>
+					 <p class="botton">
+					 <a href="javascript:void(0)">两性</a></p> -->
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	<div class="else-consult"></div>
+	<script>
+	$(function(){
+		var make = window.location.search.split("=")[1];
+		$(".fine_query").click(function(){
+			var  about_query= $(".revise").val();
+			console.log(make)
+			$.ajax({
+			url: "http://test.zhituteam.com/fetch.php",
+				type: "get",
+				dataType: "json",
+				data: {					
+					query: about_query=make,
+				},
+				success:function(res){					
+					for(var i=0;i<res.search_results.length; i++){
+						if(res.search_results[i].type == 'DISEASE_DESC'){
+							var str ='';
+							str ='<a href="javascript:void(0)"><span class="illness-top">'+res.search_results[i].query_str+'</span><span class="illness-content">'+res.search_results[i].desc+'</span><div class="illness-fina clearfix"><span>就诊科室</span><span>术前注意事项</span><span class="border">术后护理</span></div></a>'						
+							$(".illness").html(str);
+						};
+						if(res.search_results[i].type == 'SIMILAR_PRO'){	
+							var qqstr = '';
+							for(var j=0;j<res.search_results[i].result.length; j++){
+								qqstr+='<div class="infor"><img src="./image/Group 22x.png" alt=""><span>'+res.search_results[i].result[j].ask+'</span></div>'				      										
+							}
+							 $(".new-infor").html(qqstr);
+					    };
+					    if(res.search_results[i].type == 'DOCTOR_RELATED'){	
+					    	var qwstr ='';
+					    	for (var j=0; j<res.search_results[i].result.length; j++){
+					    		 qwstr +='<div><img src="'+res.search_results[i].result[j].image+'" alt=""><p><span class="write">'+res.search_results[i].result[j].name+'</span><span>'+res.search_results[i].result[j].clinic+'</span><span>'+res.search_results[i].result[j].title+'</span></p><p class="some">'+res.search_results[i].result[j].hospital+'</p><p>'+res.search_results[i].result[j].good_at+'</p></div><p class="buy"><a href="#">'+res.search_results[i].result[j].price_text+'</a><span>8792人购买</span></p></div>'
+				                $(".img-infor").html(qwstr);
+					    	}
+					    };
+					    if(res.search_results[i].type == 'PEDIA_INFO'){
+                                var lalastr ='';
+					    	for (var j=0; j<res.search_results[i].result.length; j++){
+					    		 lalastr +='<a href="javascript:void(0)" class="bignell">'+res.search_results[i].result[j].title+'<img src="./image/Group 5 Copy@2x.png" alt=""></a>'
+				                $(".k-wc").html(lalastr);
+					    	}
+					    };
+					    if(res.search_results[i].type == 'NEWS'){
+                                var xistr ='';
+					    	for (var j=0; j<res.search_results[i].result.length; j++){
+					    		 xistr +='<img src="'+res.search_results[i].result[j].mini_img+'" alt=""> <p><a href="javascript:void(0)">'+res.search_results[i].result[j].title+'</a></p> <p class="botton"><a href="javascript:void(0)">'+res.search_results[i].result[j].channel_name+'</a></p>'
+				                $(".big-infor").html(xistr);
+					    	}
+					    };
+					}
+				},
+				error:function(res){
+					alert(res);
+				}
+		    })
+		})
+		
+        })
+	</script>
+</body>
+</html>

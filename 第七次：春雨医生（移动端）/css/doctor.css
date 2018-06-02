@@ -1,0 +1,361 @@
+body,html {
+	font-size: 62.5%;
+}
+body,html,a,p,div,span,img,i,h6 {
+	padding: 0;
+	margin: 0;
+}
+a {
+	text-decoration: none;
+}
+.clearfix::after {
+	display: block;
+	clear: both;
+	content: "";
+	height: 0;
+}
+.header-hide {
+	width: 100%;
+	height: 4rem;
+	line-height: 4rem;
+	background: #656565;
+	overflow: hidden;
+}
+.header-hide>div {
+	padding-left: 1.3rem;
+}
+.header-close {	
+	margin-right: 0.5rem;
+	vertical-align: middle;
+	display: inline-block;
+	background: url("../image/close.png") no-repeat;
+	width:1.8rem;
+	height: 1.8rem;
+	background-size: cover;
+}
+.header-set {
+	display: inline-block;
+	font-size: 1.2rem;
+	color: #fff;
+	vertical-align: middle;
+	background: url("../image/index.png") no-repeat center left;
+	background-size: 1.9rem;
+	padding-left: 2.5rem;
+}
+.set-up {
+	display: inline-block;
+	float: right;
+	position: relative;
+	vertical-align: middle;
+	text-align: center;
+    background-color: #37cf6b;
+    color: #fff;
+    padding: 0 1.5rem;
+    font-size: 1.2rem;
+    line-height: 4rem;
+}
+.header-but, .header-search, .quick-question, .fina {
+	position: relative;
+	width: 100%;
+	border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+.header-login {
+	position: relative;
+    padding: 1.5rem 1.2rem;
+}
+.img-logo {
+    width: 10rem;
+    display: block;
+    height: 2.3rem;
+    margin: 0 auto;
+}
+.people {
+	display: inline-block;
+	position: absolute;
+	right: 1.2rem;
+	top: 1.5rem;
+	background: url("../image/indexpeople.png") no-repeat;
+	width: 2.3rem;
+	height: 2.3rem;
+	background-size: cover; 
+}
+.new-search {
+	position: relative;
+	padding: 0.8rem 1.2rem;
+}
+.new-search input {
+    width: 96%;
+	padding: 0.7rem 2%;
+	background-color: #F4F4F4;
+	color: #666;
+	border: 0;
+	border-radius: 0.5rem;
+}
+.new-search>a {
+	position: absolute;
+	display: block;
+	right: 1.8rem;
+	top: 1.5rem;
+	width: 1.5rem;
+	height: 1.5rem;
+}
+input::-webkit-input-placeholder { /* WebKit browsers*/ 
+　　color:#999;font-size:12px;
+　　}
+input:-moz-placeholder {  /* Mozilla Firefox 2 to 18*/ 
+　　color:#999;font-size:12px;
+　　}
+input::-moz-placeholder {  /* Mozilla Firefox 19+*/ 
+　　color:#999;font-size:12px;
+　　}
+input:-ms-input-placeholder { /* Internet Explorer 10+*/ 
+　　color:#999;font-size:12px;
+}
+.header-search>div>a>img {
+	width: 1.5rem;
+	height: 1.5rem;
+}
+.new-search input:focus {
+	outline: 0;
+}
+.new-quick {
+	position: relative;
+	padding: 2.5rem 1.2rem 2.5rem 6.5rem;
+}
+.quick-img {
+	display: block;
+	position: absolute;
+	left: 1.5rem;
+	width: 3.5rem;
+	height: 3rem;
+	top: 3rem;
+}
+.quick-img>img {
+	width: 3.5rem;
+	height: 3rem;
+}
+.quick-text {
+	display: block;
+	position: relative;
+}
+.quick-text>span {
+	display: block;
+}
+.quick-text>span:first-child {
+	font-size: 1.8rem;
+	font-weight: 500;
+	color:#323232;
+	margin-bottom: 0.3rem;
+}
+.last-span {
+    color: #999;
+    font-size: 1.2rem;
+}
+.quick-text>i{
+	position: absolute;
+	display: block;
+	width: 0.6rem;
+	right: 0;
+	top: 50%;
+	height: 1rem;
+	background: url("../image/next.png") no-repeat;
+	background-size: cover;
+}
+.fina>a {
+    display: inline-block;
+    float: left;
+    text-align: center;
+}
+.fina>a:first-child {
+	width: 49%;
+	border-right: 1px solid #f4f4f4;
+}
+.fina>a:last-child {
+	width: 50%;
+}
+.fina>a>img {
+	margin: 1rem 0 0.5rem 0;
+	width: 3rem;
+	height: 3.5rem;
+}
+.fina>a>span {
+	display: block;
+    color: #999;
+    margin-bottom: 0.8rem;
+}
+.box-swiper {
+    width: 100%;
+    height: 10.4rem;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.main-wrapper {
+    width:100%;
+    height: 10.4rem;
+}
+.main-wrapper .main-slide {
+	width: 100%;
+    display: block;
+    position: relative;   
+}
+.swiper-slide>img {
+	position:relative;
+	display: block;
+	float: left;
+    width: 100%;
+    height: 10.4rem;
+    background-size: cover;
+}
+/*.main-pagination {
+	position: absolute;
+	bottom:-1rem;
+	background: red;
+	width: 1rem;
+	height: 1rem;
+	border-radius: 100%;
+}*/
+.answer, .illness, .health {
+	width: 100%;
+	border-top:0.8rem solid #F1F1F1; 
+}
+.box-title {
+	padding: 0.8rem 1.2rem;
+	border-bottom: 1px solid rgba(0,0,0,0.01);
+}
+.box-title>span>sup {
+	background: url("../image/sup.png") no-repeat;
+	width: 3rem;
+	height: 1.1rem;
+	background-size: cover;
+	display: inline-block;
+}
+.box-title>span{
+	font-size: 1.6rem;
+	color: #323232;
+	vertical-align: middle;
+}
+.box-title a {
+	display: inline-block;
+    float: right;
+    font-size: 1.4rem;
+    color: #999;
+    vertical-align: middle;
+}
+.box-title a i {
+	width: 0.6rem;
+	display: inline-block;
+	float: right;
+	height: 1rem;
+	margin-left: 0.4rem;
+	margin-top: 0.35rem;
+	background: url("../image/next.png") no-repeat;
+	background-size: cover;
+}
+.text-box {
+	border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+.answer-box>div:last-child {
+	border-bottom:1px solid #fff;
+}
+.answer-text {
+	display: block;
+	padding: 1.2rem ;
+	position: relative;
+}
+.answer-text h6 {
+	color: #323232;
+	font-size: 1.4rem;
+	margin-bottom: 0.6rem;
+	letter-spacing: 0.04rem;
+	white-space: nowrap;
+	text-overflow:ellipsis;
+	overflow: hidden;
+}
+.answer-text>p {
+    margin-left: 1.7rem;
+    font-size: 1.4rem;
+    color: #323232;
+}
+.text-tag {
+    background-color: #FFA800;
+    color: #fff;
+    padding: 0 0.1rem;
+    font-size: 1.4rem;
+    border-radius: 0.3rem;
+    font-weight: 500;
+    margin-right: 0.3rem;
+    display: inline-block;
+}
+.illness-text {
+	padding:0.6rem 1.2rem;
+}
+.illness-text>a {
+	display: inline-block;
+	padding: 0.4rem 0.5rem;
+	color: #666;
+	font-size: 1.4rem;
+	border:1px solid #e7e7e7;
+	margin:0.6rem 1.2rem 0.5rem 0rem;
+}
+.health-text {
+	position: relative;
+	display: block;
+	overflow: hidden;
+	height: 6.5rem;
+	padding: 1.5rem 1.2rem 1.5rem 10.4rem;
+	position: relative;
+}
+.health-text>img {
+	position: absolute;
+	width: 8rem;
+	display: block;
+	height: 6.5rem;
+	left: 1.2rem;
+	background-size: cover;
+}
+.health-text .videos::before {
+	display: block;
+	/*background: url("../image/headlth-before.png") no-repeat center;*/
+	background: red;
+	z-index: 999;
+	width: 2rem;
+	height: 2.5rem;
+	position: absolute;
+	top: 50%;
+	left: 4rem;
+}
+.health-text>span {
+	display: block;
+	font-size: 1.5rem;
+	color: #323232;
+	font-weight: 500;
+}
+.health-text>p {
+	position:absolute;
+	bottom: 1.5rem;
+	color: #999;
+	font-size: 1.5rem;
+}
+.footer {
+	color: #9b9b9b;
+    font-size: 1.2rem;
+    padding: 1.5rem;
+    background-color: #3a3a3b;
+    text-align: center;
+}
+.footer-logo {
+	width: 9.4rem;
+    display: block;
+    height: 2rem;
+    margin: 0 auto;
+	margin-bottom: 1rem;
+}
+.footer>p {
+	font-size: 1.2rem;
+	margin:0.3rem 0;
+}
+.fina_query {
+	position: absolute;
+	right: 1.5rem;
+	top: 1.3rem;
+}
